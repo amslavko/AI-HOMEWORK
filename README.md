@@ -59,6 +59,7 @@ Waszym zadaniem jest dobranie odpowiedniej **architektury sieci neuronowej** do 
 Projekt powinien obejmować:
 
 * Podział danych na treningowe i walidacyjne w celu ewaluacji jego jakości i uniknięcia przeuczenia
+* Ustawienie seed'a aby zapewnić reprodukowalność eksperymentów
 * Porównanie różnych architektur sieci i hiperparametrów (np. `learning rate`, `momentum`, `batch size`)
 * Porównanie jakości modeli **z użyciem i bez użycia dropout**
 * Skrypt do predykcji, który zwraca wyniki w formacie określonym na stronie konkursu
@@ -90,6 +91,7 @@ Oblicz pochodne dla przypadku gdzie wszystkie parametry zainicjowane są z warto
 * Dla jakich rodzajów zadań warto rozpatrzyć użycie sieci neuronowej. Dlaczego nie można napisać ręcznie programu (bez trenowania modelu) do predykcji wartości składającego się z samych if'ów? Na przykład precyzując warunki jeśli x1 = 5 oraz x2 = 1 to predykcja powinna być równa 5.6.
 * W jakim celu używane są funkcje aktywacji? Co się stanie jeśli w sieci o wielu warstwach ukrytych pozbędziemy się funkcji aktywacji?
 * Wyjaśnij rolę dropout'u w trenowaniu sieci neuronowych.
+
 
 
 

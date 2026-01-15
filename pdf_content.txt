@@ -1,0 +1,64 @@
+Sieci Neuronowe i Propagacja Wsteczna 13 stycznia 2026
+
+Architektura sieci
+
+Wejście: x = [x1, x2]
+
+Warstwa ukryta: 2 neurony, funkcja aktywacji ReLU
+
+Warstwa wyjściowa: 1 neuron, funkcja liniowa
+
+Funkcja straty: Mean Squared Error (MSE)
+
+Dane: x = [2, 3], y_target = 5
+
+Część 1: Obliczenie pochodnych (inicjalizacja 1.0)
+
+Założenia początkowe: Wszystkie wagi oraz biasy w sieci są równe 1.0.
+
+Forward Pass
+
+Warstwa ukryta: z = (2·1) + (3·1) + 1 = 6 h = ReLU(6) = 6 h1 = 6, h2 = 6
+
+Warstwa wyjściowa: ypred = (6·1) + (6·1) + 1 = 13
+
+Błąd: L = (13 − 5)² = 64
+
+Backward Pass
+
+∂L/∂ypred = 2(13 − 5) = 16 δout = 16
+
+Warstwa wyjściowa: ∂L/∂wout = 16 · 6 = 96 ∂L/∂bout = 16
+
+Warstwa ukryta: f’(6) = 1 δh = 16 · 1 · 1 = 16
+
+∂L/∂wx1 = 16 · 2 = 32 ∂L/∂wx2 = 16 · 3 = 48 ∂L/∂b = 16
+
+Część 2: Inicjalizacja zerami
+
+Pytanie: Czy sieć może się uczyć przy zerowej inicjalizacji?
+
+Odpowiedź: Nie.
+
+Forward Pass: ypred = 0
+
+Backward Pass: δout = 2(0 − 5) = −10 −10 · 0 = 0 – wagi się nie
+zmieniają Gradient nie przechodzi do niższych warstw
+
+Wynik: Sieć się nie uczy i występuje problem symetrii
+
+Część 3: Pytania teoretyczne
+
+1.  Sieci neuronowe vs If/Else
+
+Sieci są dobre dla obrazów, dźwięku i tekstu. If/Else nie działa, bo: -
+jest za dużo kombinacji - brak generalizacji
+
+2.  Funkcja aktywacji
+
+Dodaje nieliniowość. Bez niej sieć = regresja liniowa.
+
+3.  Dropout
+
+Chroni przed przeuczeniem. Losowo wyłącza neurony. Sieć uczy się
+bardziej ogólnie.
